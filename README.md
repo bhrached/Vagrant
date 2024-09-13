@@ -1,6 +1,6 @@
 # Vagrant DevOps
 
-Ce projet contient plusieurs fichiers Vagrant et des outils DevOps pour aider à configurer et gérer des environnements.
+Ce projet contient plusieurs fichiers Vagrant qui installent des outils DevOps pour aider à configurer et gérer des environnements
 
 ## Prérequis
 
