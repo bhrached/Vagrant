@@ -82,6 +82,31 @@ install_wordpress() {
     sudo rm /var/www/html/index.html
     check_command_status "Configuration du fichier wp-config.php"
 
+    # Créer et configurer le fichier wordpress.conf pour Apache
+    echo "Géneration wordpress.conf..."
+    sudo bash -c 'cat > /etc/apache2/sites-available/wordpress.conf <<EOF
+    <VirtualHost *:80>
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html
+        ServerName localhost
+
+        <Directory /var/www/html>
+            AllowOverride All
+            Require all granted
+        </Directory>
+
+        ErrorLog \${APACHE_LOG_DIR}/error.log
+        CustomLog \${APACHE_LOG_DIR}/access.log combined
+    </VirtualHost>
+    EOF'
+    check_command_status "Géneration wordpress.conf."
+
+    # Activer le fichier de configuration Apache pour WordPress
+    echo "configuration Apache..."
+    sudo a2ensite wordpress.conf
+    sudo a2enmod rewrite
+    check_command_status "configuration Apache"
+
     # Redémarrer Apache
     echo "Redémarrage d'Apache..."
     sudo systemctl restart apache2
