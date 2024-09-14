@@ -23,7 +23,7 @@ Ce projet contient plusieurs fichiers Vagrant qui installent des outils DevOps p
 
 ## Utilisation
 
-- Pour démarrer les machines virtuelles, exécutez `vagrant up` à partir du répertoire du projet.
+- Pour démarrer les machines virtuelles, exécutez `vagrant up` à partir du répertoire du projet ou `vagrant up --provision`. 
 - Pour provisionner la machine virtuelle avec les scripts de provisionnement, exécutez `vagrant provision` à partir du répertoire du projet.
 - Pour arrêter les machines virtuelles, exécutez `vagrant halt` à partir du répertoire du projet.
 - Pour détruire les machines virtuelles, exécutez `vagrant destroy` à partir du répertoire du projet.
