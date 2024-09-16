@@ -6,9 +6,9 @@
 # Activer le mode strict
 set -euo pipefail
 
-# Fonction pour installer et configurer Jenkins
+# Fonction pour installer et configurer GitLab
 install_gitlab() {
-    # Mettre à jour la date
+    # Instalation Open SSH
     sudo apt-get update
     sudo apt-get install -y curl openssh-server ca-certificates
 
