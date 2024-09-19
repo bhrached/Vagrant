@@ -23,11 +23,13 @@ Ce projet contient plusieurs fichiers Vagrant qui installent des outils DevOps p
 
 ## Utilisation
 
-- Pour démarrer les machines virtuelles, exécutez `vagrant up` à partir du répertoire du projet ou `vagrant up --provision`. 
+- Pour démarrer les machines virtuelles, exécutez `vagrant up` ou `vagrant up --debug` à partir du répertoire du projet ou `vagrant up --provision` pour le provisionnement de la machine. 
 - Pour provisionner la machine virtuelle avec les scripts de provisionnement, exécutez `vagrant provision` à partir du répertoire du projet.
+- Pour se connecter à la machine virtuelle, exécutez `vagrant ssh` ou `vagrant ssh jenkins -c "uname -a"` pour excuter une comande ssh depuis le machine hote à partir du répertoire du projet.
 - Pour arrêter les machines virtuelles, exécutez `vagrant halt` à partir du répertoire du projet.
-- Pour détruire les machines virtuelles, exécutez `vagrant destroy` à partir du répertoire du projet.
-- Le clé SSH exist sous ce chemin : .vagrant/machines/default/virtualbox/private_key
+- Pour détruire les machines virtuelles, exécutez `vagrant destroy` ou `vagrant destroy [@id_machine]`  ou `vagrant destroy [@nom_machine]` à partir du répertoire du projet.
+- Pour visualiser l'etat des machines virtuelles, exécutez `vagrant global-status` ou `vagrant global-status --prune` à partir du répertoire du projet.
+- Le clé SSH existe sous ce chemin : .vagrant/machines/default/virtualbox/private_key
 
 ## Contribution
 
